@@ -1,75 +1,102 @@
 @import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
+@plugin "@tailwindcss/typography";
 
 :root {
-  --color-background: #ffffff;
-  --color-foreground: #1e293b;
-  --color-muted: #64748b;
-  --color-border: #e2e8f0;
-  --color-surface: #f8fafc;
-  --color-brand: #2563eb;
-  --color-brand-light: #dbeafe;
-  --color-brand-dark: #1d4ed8;
-  --color-accent: #059669;
-  --color-accent-light: #d1fae5;
+  --color-primary: #0B1F3F;
+  --color-primary-light: #1A3A6B;
+  --color-accent: #0891B2;
+  --color-accent-light: #22D3EE;
+  --color-highlight: #F59E0B;
+  --color-highlight-light: #FBBF24;
+  --color-background: #F8FAFC;
+  --color-foreground: #0F172A;
 }
 
-.dark {
-  --color-background: #0f172a;
-  --color-foreground: #e2e8f0;
-  --color-muted: #94a3b8;
-  --color-border: #1e293b;
-  --color-surface: #1e293b;
-  --color-brand: #3b82f6;
-  --color-brand-light: #1e3a5f;
-  --color-brand-dark: #60a5fa;
-  --color-accent: #34d399;
-  --color-accent-light: #064e3b;
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 body {
-  color: var(--color-foreground);
   background: var(--color-background);
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-foreground);
 }
 
-/* Search input custom styles */
-.search-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+html {
+  scroll-behavior: smooth;
 }
 
-/* Smooth result animations */
-.result-enter {
-  animation: resultFadeIn 0.2s ease-out;
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-@keyframes resultFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+* { -webkit-tap-highlight-color: transparent; }
+
+::selection {
+  background-color: rgba(8, 145, 178, 0.15);
+  color: inherit;
 }
 
-/* Trust strip subtle animation */
-.trust-strip {
-  animation: fadeInUp 0.6s ease-out 0.3s both;
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-stagger-1 { animation-delay: 0.05s; }
+.animate-stagger-2 { animation-delay: 0.1s; }
+.animate-stagger-3 { animation-delay: 0.15s; }
+.animate-stagger-4 { animation-delay: 0.2s; }
+.animate-stagger-5 { animation-delay: 0.25s; }
+.animate-stagger-6 { animation-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up { animation: none; opacity: 1; transform: none; }
+}
+
+.card-hover-lift {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.card-hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover-lift:hover { transform: none; }
+}
+
+@media print {
+  header, footer, .no-print, [data-no-print], button:not(.print-keep) { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .rounded-2xl { border: 1px solid #ccc !important; box-shadow: none !important; break-inside: avoid; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.75em; color: #666; }
+  a[href^="/"]::after, a[href^="#"]::after { content: none; }
+  @page { margin: 1.5cm; }
 }
