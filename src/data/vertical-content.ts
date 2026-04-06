@@ -138,6 +138,26 @@ export const verticalContent: VerticalContent[] = [
     ],
   },
   {
+    spokeId: 'puhelinvertailu',
+    howItWorks: [
+      { step: 1, title: 'Valitse tarpeesi', description: 'Kerro, tarvitsetko rajatonta dataa, 5G-nopeuksia vai edullista perusliittymää. Vertaa mobiili- tai laajakaistaliittymiä.' },
+      { step: 2, title: 'Vertaa liittymiä', description: 'Näe kaikkien operaattoreiden liittymät rinnakkain — hinnat, nopeudet, datamäärät ja sopimusehdot.' },
+      { step: 3, title: 'Vaihda operaattoria', description: 'Valitse paras liittymä ja siirry operaattorin sivulle. Numeron siirto on ilmaista ja helppoa.' },
+    ],
+    detailedFeatures: [
+      { title: '7 operaattorin vertailu', description: 'Elisa, DNA, Telia, Moi, Giga Mobiili, Oomi ja Globetel — kaikki operaattorit yhdessä paikassa.' },
+      { title: 'Mobiili- ja laajakaistat', description: 'Vertaa puhelinliittymiä ja kiinteitä laajakaistoja. Löydä paras yhdistelmä kotiin ja taskuun.' },
+      { title: 'Operaattorivertailut', description: 'Elisa vs DNA, Telia vs Moi ja muut suositut vertailut valmiina. Näe erot selkeästi.' },
+      { title: 'Kaupunkisivut', description: 'Katso liittymätarjoukset ja saatavuus omalla paikkakunnallasi. 5G-kattavuustiedot alueittain.' },
+    ],
+    faqs: [
+      { question: 'Onko liittymävertailu ilmaista?', answer: 'Kyllä, Valitse Puhelin on täysin ilmainen palvelu. Vertaa kaikkia liittymiä ja operaattoreita maksutta.' },
+      { question: 'Voiko numeroa siirtää operaattoreiden välillä?', answer: 'Kyllä. Numeron siirto on Suomessa ilmaista ja helppoa. Uusi operaattori hoitaa siirron puolestasi 1–5 arkipäivässä.' },
+      { question: 'Mikä on halvin rajaton liittymä?', answer: 'Rajattomien liittymien hinnat alkavat noin 20 eurosta kuukaudessa. Hinta riippuu nopeudesta — 4G-liittymät ovat edullisempia kuin 5G.' },
+      { question: 'Tarvitsenko 5G-liittymän?', answer: '5G on nopeampi kuin 4G, mutta useimmille käyttäjille 4G riittää hyvin. 5G kannattaa, jos käytät paljon dataa tai haluat parhaan mahdollisen nopeuden.' },
+    ],
+  },
+  {
     spokeId: 'fillioneer',
     howItWorks: [
       { step: 1, title: 'Luo tili', description: 'Rekisteröidy ilmaiseksi ja syötä tulosi, menosi ja varallisuutesi. Ilmainen perusversio riittää alkuun.' },
