@@ -34,14 +34,13 @@ export const lifeEvents: LifeEvent[] = [
     iconName: 'Key',
     color: '#7C3AED',
     colorLight: '#EDE9FE',
-    relatedSpokeIds: ['asuntomaatti', 'lainavertailu', 'energiavertailu', 'fixmera', 'vakuutusvertailu', 'lakimaatti'],
+    relatedSpokeIds: ['asuntomaatti', 'lainavertailu', 'energiavertailu', 'fixmera', 'vakuutusvertailu'],
     steps: [
       { order: 1, title: 'Tutki markkinaa', description: 'Vertaa asuinalueita, hintatasoja ja tulevaisuuden näkymiä. Käytä ilmaista hinta-arviotyökalua.', spokeId: 'asuntomaatti', actionText: 'Tutki asuntomarkkinaa' },
       { order: 2, title: 'Vertaa asuntolainoja', description: 'Kilpailuta asuntolaina ja löydä paras korko. Näytämme kaikki lainanantajat.', spokeId: 'lainavertailu', actionText: 'Vertaa asuntolainoja' },
-      { order: 3, title: 'Tee avioehto', description: 'Suojaa omaisuutesi avioehtosopimuksella ennen asunnon ostoa.', spokeId: 'lakimaatti', actionText: 'Tee avioehto' },
-      { order: 4, title: 'Valitse sähkösopimus', description: 'Vertaa sähkösopimuksia uuteen kotiin ja säästä energia­kuluissa.', spokeId: 'energiavertailu', actionText: 'Vertaa sähköä' },
-      { order: 5, title: 'Järjestä kotipalvelut', description: 'Löydä remonttifirma, putkimies tai siivooja uuteen kotiin.', spokeId: 'fixmera', actionText: 'Etsi palveluita' },
-      { order: 6, title: 'Hanki kotivakuutus', description: 'Vertaa kotivakuutuksia ja varmista riittävä turva.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa vakuutuksia' },
+      { order: 3, title: 'Valitse sähkösopimus', description: 'Vertaa sähkösopimuksia uuteen kotiin ja säästä energia­kuluissa.', spokeId: 'energiavertailu', actionText: 'Vertaa sähköä' },
+      { order: 4, title: 'Järjestä kotipalvelut', description: 'Löydä remonttifirma, putkimies tai siivooja uuteen kotiin.', spokeId: 'fixmera', actionText: 'Etsi palveluita' },
+      { order: 5, title: 'Hanki kotivakuutus', description: 'Vertaa kotivakuutuksia ja varmista riittävä turva.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa vakuutuksia' },
     ],
     tips: [
       'Kilpailuta asuntolaina vähintään 3 pankista.',
@@ -60,10 +59,9 @@ export const lifeEvents: LifeEvent[] = [
     iconName: 'Heart',
     color: '#EC4899',
     colorLight: '#FCE7F3',
-    relatedSpokeIds: ['lakimaatti', 'vakuutusvertailu'],
+    relatedSpokeIds: ['vakuutusvertailu'],
     steps: [
-      { order: 1, title: 'Tee avioehtosopimus', description: 'Suojaa omaisuutesi avioehtosopimuksella. Lakimaatin avulla teet sen helposti verkossa.', spokeId: 'lakimaatti', actionText: 'Tee avioehto' },
-      { order: 2, title: 'Yhdistä vakuutukset', description: 'Aviopuolisot voivat usein saada paremmat vakuutusehdot yhdistämällä vakuutuksensa.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa vakuutuksia' },
+      { order: 1, title: 'Yhdistä vakuutukset', description: 'Aviopuolisot voivat usein saada paremmat vakuutusehdot yhdistämällä vakuutuksensa.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa vakuutuksia' },
     ],
     tips: [
       'Avioehtosopimus kannattaa tehdä ennen häitä tai viimeistään pian niiden jälkeen.',
@@ -81,10 +79,9 @@ export const lifeEvents: LifeEvent[] = [
     iconName: 'Baby',
     color: '#F59E0B',
     colorLight: '#FEF3C7',
-    relatedSpokeIds: ['vakuutusvertailu', 'lakimaatti'],
+    relatedSpokeIds: ['vakuutusvertailu'],
     steps: [
       { order: 1, title: 'Tarkista vakuutukset', description: 'Hanki lapselle sairaus- ja tapaturmavakuutus. Tarkista myös oma henkivakuutus.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa vakuutuksia' },
-      { order: 2, title: 'Tee testamentti', description: 'Varmista perheesi tulevaisuus testamentilla. Lakimaatti tekee siitä helppoa.', spokeId: 'lakimaatti', actionText: 'Tee testamentti' },
     ],
     tips: [
       'Lapsivakuutus kannattaa ottaa mahdollisimman varhain.',
@@ -102,11 +99,10 @@ export const lifeEvents: LifeEvent[] = [
     iconName: 'Briefcase',
     color: '#2563EB',
     colorLight: '#DBEAFE',
-    relatedSpokeIds: ['lakimaatti', 'vakuutusvertailu', 'energiavertailu'],
+    relatedSpokeIds: ['vakuutusvertailu', 'energiavertailu'],
     steps: [
-      { order: 1, title: 'Hoida lakiasiat', description: 'Osakassopimus, yhtiöjärjestys ja muut perustamisasiakirjat.', spokeId: 'lakimaatti', actionText: 'Lakipalvelut yrittäjälle' },
-      { order: 2, title: 'Hanki yritysvakuutukset', description: 'Vastuuvakuutus, YEL-vakuutus ja muut yrittäjän pakolliset vakuutukset.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa yritysvakuutuksia' },
-      { order: 3, title: 'Kilpailuta yrityksen sähkö', description: 'Yrityssähkösopimuksissa on isoja hintaeroja — vertaa ja säästä.', spokeId: 'energiavertailu', actionText: 'Vertaa yrityssähköä' },
+      { order: 1, title: 'Hanki yritysvakuutukset', description: 'Vastuuvakuutus, YEL-vakuutus ja muut yrittäjän pakolliset vakuutukset.', spokeId: 'vakuutusvertailu', actionText: 'Vertaa yritysvakuutuksia' },
+      { order: 2, title: 'Kilpailuta yrityksen sähkö', description: 'Yrityssähkösopimuksissa on isoja hintaeroja — vertaa ja säästä.', spokeId: 'energiavertailu', actionText: 'Vertaa yrityssähköä' },
     ],
     tips: [
       'YEL-vakuutus on pakollinen, mutta maksussa voi säästää vertailemalla.',

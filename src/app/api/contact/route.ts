@@ -8,6 +8,8 @@ interface ContactFormData {
 }
 
 // Simple rate limiting: track IPs in memory
+// NOTE: In-memory map resets on each serverless cold start. For production-grade
+// rate limiting, use an external store (e.g. Redis or Vercel KV).
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 const RATE_LIMIT = 5; // max 5 submissions
 const RATE_WINDOW = 3600000; // per hour
@@ -98,14 +100,11 @@ export async function POST(request: NextRequest) {
         );
       }
     } else {
-      // Log to console if no email service configured
-      console.log('Contact form submission (no RESEND_API_KEY configured):', {
-        name: body.name,
-        email: body.email,
-        subject: body.subject,
-        message: body.message.substring(0, 100) + '...',
-        timestamp: new Date().toISOString(),
-      });
+      // No email service configured — reject the submission
+      return NextResponse.json(
+        { success: false, error: 'Yhteydenottolomake ei ole tällä hetkellä käytössä.' },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json({ success: true });

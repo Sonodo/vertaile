@@ -2,7 +2,7 @@ import type { NavigationItem, BlogCategory } from '@/types';
 
 export const SITE_NAME = 'Valitse';
 export const SITE_URL = 'https://valitse.fi';
-export const SITE_DESCRIPTION = 'Suomen monipuolinen vertailupalvelu. Vertaa sähköä, lainoja, vakuutuksia, asuntoja, kotipalveluita ja tarjouksia yhdestä paikasta.';
+export const SITE_DESCRIPTION = 'Suomen monipuolisin vertailupalvelu. Vertaa sähköä, lainoja, vakuutuksia, asuntoja, kotipalveluita ja tarjouksia yhdestä paikasta.';
 export const SITE_TAGLINE = 'Vertaa kaikkea yhdestä paikasta';
 
 export const COLORS = {

@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const content = `# Valitse — Suomen monipuolinen vertailupalvelu
+  const content = `# Valitse — Suomen monipuolisin vertailupalvelu
 
-> Valitse (valitse.fi) on suomalainen vertailupalvelualusta, joka kokoaa yhteen 9 eri vertailupalvelua. Palvelu on ilmainen, puolueeton ja näyttää kaikki vaihtoehdot — myös ne, joista emme saa komissiota.
+> Valitse (valitse.fi) on suomalainen vertailupalvelualusta, joka kokoaa yhteen 8 eri vertailupalvelua. Palvelu on ilmainen, puolueeton ja näyttää kaikki vaihtoehdot — myös ne, joista emme saa komissiota.
 
 ## Palvelut
 
@@ -27,9 +27,6 @@ Tarjoukset ja alennukset kartalla. Päivittäin päivittyvä, kymmeniä kauppake
 
 ### Fixmera (fixmera.com)
 Kotipalveluiden vertailu. 1 878 yritystä, 5 769 arvostelua, 9 palvelukategoriaa.
-
-### Lakimaatti (lakimaatti.fi)
-Lakipalvelut verkossa. Avioehtosopimus ja testamentti helposti tekoälyavusteisesti.
 
 ### Fillioneer (fillioneer.com)
 Henkilökohtaisen talouden seuranta. Varallisuuden seuranta, FIRE-laskuri, menoanalyysi.

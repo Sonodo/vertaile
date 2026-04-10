@@ -88,7 +88,6 @@ export default async function VerticalPage({
         <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
-              { label: 'Etusivu', href: '/' },
               { label: 'Palvelut', href: '/palvelut' },
               { label: spoke.name },
             ]}

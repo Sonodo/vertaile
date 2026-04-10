@@ -9,6 +9,15 @@ declare global {
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+function updateClarityConsent(granted: boolean) {
+  const w = window as unknown as { clarity?: (...args: unknown[]) => void };
+  if (!w.clarity) return;
+  w.clarity('consentv2', {
+    analytics_storage: granted ? 'granted' : 'denied',
+    ad_storage: 'denied',
+  });
+}
+
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
@@ -30,11 +39,13 @@ export default function CookieConsent() {
         analytics_storage: 'granted',
       });
     }
+    updateClarityConsent(true);
     setVisible(false);
   };
 
   const reject = () => {
     localStorage.setItem('analytics_consent', 'denied');
+    updateClarityConsent(false);
     setVisible(false);
   };
 

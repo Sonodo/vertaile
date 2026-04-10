@@ -7,6 +7,7 @@ import { Layers, Menu, X, ChevronDown } from 'lucide-react';
 import { NAVIGATION } from '@/lib/constants';
 import { spokes } from '@/data/spokes';
 import { SpokeIcon } from '@/components/ui/SpokeIcon';
+import { NavSearch } from '@/components/layout/NavSearch';
 import { cn } from '@/lib/utils';
 
 export function Header() {
@@ -159,6 +160,9 @@ export function Header() {
               )
             )}
           </div>
+
+          {/* Search */}
+          <NavSearch />
 
           {/* Mobile menu button */}
           <button

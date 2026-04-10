@@ -119,25 +119,6 @@ export const verticalContent: VerticalContent[] = [
     ],
   },
   {
-    spokeId: 'lakimaatti',
-    howItWorks: [
-      { step: 1, title: 'Valitse asiakirja', description: 'Valitse tarvitsemasi asiakirja: avioehtosopimus, testamentti tai muu lakidokumentti.' },
-      { step: 2, title: 'Vastaa kysymyksiin', description: 'AI-avusteinen palvelu ohjaa sinut asiakirjan luomisessa vaihe vaiheelta selkeillä kysymyksillä.' },
-      { step: 3, title: 'Lataa valmis PDF', description: 'Saat valmiin, juridisesti pätevän asiakirjan PDF-muodossa. Tulosta, allekirjoita ja rekisteröi.' },
-    ],
-    detailedFeatures: [
-      { title: 'Avioehtosopimus verkossa', description: 'Tee avioehtosopimus helposti verkossa murto-osalla perinteisen lakimiehen hinnasta. AI ohjaa prosessin läpi.' },
-      { title: 'AI-avusteinen prosessi', description: 'Tekoäly selittää jokaisen vaiheen ymmärrettävästi ja varmistaa, ettei mitään tärkeää jää huomiotta.' },
-      { title: 'Valmis PDF heti', description: 'Saat valmiin asiakirjan heti PDF-muodossa. Ei odottelua, ei ajanvarausta — asiakirja on valmis minuuteissa.' },
-      { title: 'Lakiartikkelit ja oppaat', description: 'Kattava artikkelikirjasto avioehdon, testamentin ja muiden lakiasioiden tueksi. Selkeää suomen kieltä, ei lakijargonia.' },
-    ],
-    faqs: [
-      { question: 'Onko verkossa tehty avioehto juridisesti pätevä?', answer: 'Kyllä, kunhan se allekirjoitetaan molempien puolisoiden toimesta kahden todistajan läsnä ollessa ja rekisteröidään DVV:ssä.' },
-      { question: 'Paljonko avioehto maksaa Lakimaatilla?', answer: 'Lakimaatin avioehto maksaa murto-osan perinteisen lakitoimiston hinnasta. Tarkka hinta näkyy palvelussa.' },
-      { question: 'Tarvitaanko avioehdon rekisteröinti?', answer: 'Kyllä. Avioehtosopimus on rekisteröitävä Digi- ja väestötietovirastossa (DVV), jotta se on oikeudellisesti pätevä. Rekisteröintimaksu on noin 70 euroa.' },
-    ],
-  },
-  {
     spokeId: 'puhelinvertailu',
     howItWorks: [
       { step: 1, title: 'Valitse tarpeesi', description: 'Kerro, tarvitsetko rajatonta dataa, 5G-nopeuksia vai edullista perusliittymää. Vertaa mobiili- tai laajakaistaliittymiä.' },

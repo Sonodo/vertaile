@@ -128,24 +128,6 @@ export const spokes: Spoke[] = [
     stats: [{ label: 'Yritystä', value: '1 878' }, { label: 'Arvostelua', value: '5 769' }, { label: 'Sivuja', value: '2 074' }],
   },
   {
-    id: 'lakimaatti',
-    name: 'Lakimaatti',
-    slug: 'laki',
-    domain: 'lakimaatti.fi',
-    url: 'https://lakimaatti.fi',
-    description: 'Tee avioehto ja testamentti helposti verkossa.',
-    longDescription: 'Lakimaatti on Suomen helpoin tapa tehdä avioehtosopimus ja testamentti. Tekoälyavusteinen palvelu ohjaa sinut asiakirjan luomisessa vaihe vaiheelta, ja saat valmiin PDF-dokumentin heti.',
-    color: '#DC2626',
-    colorLight: '#FEF2F2',
-    iconName: 'Scale',
-    features: ['Avioehtosopimus verkossa', 'Testamentti (tulossa)', 'AI-avusteinen luontiprosessi', 'Valmis PDF heti', 'Lakiartikkelit ja oppaat', 'GDPR-yhteensopiva'],
-    status: 'live',
-    vertical: 'legal',
-    verticalFi: 'Lakipalvelut',
-    ctaText: 'Tee avioehto',
-    stats: [{ label: 'Artikkelia', value: '10+' }],
-  },
-  {
     id: 'fillioneer',
     name: 'Fillioneer',
     slug: 'talous',
@@ -161,6 +143,7 @@ export const spokes: Spoke[] = [
     vertical: 'finance',
     verticalFi: 'Talous',
     ctaText: 'Aloita seuranta',
+    stats: [{ label: 'Laskuria', value: '9+' }, { label: 'Sivuja', value: '80+' }, { label: 'Hinta', value: 'Ilmainen' }],
   },
 ];
 

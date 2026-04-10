@@ -96,7 +96,7 @@ export default function MenetelmaPage() {
       />
 
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <Breadcrumbs items={[{ label: 'Etusivu', href: '/' }, { label: 'Menetelmä' }]} />
+        <Breadcrumbs items={[{ label: 'Menetelmä' }]} />
 
         {/* Hero */}
         <section className="mb-16 text-center">

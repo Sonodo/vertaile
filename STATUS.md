@@ -4,7 +4,7 @@
 **Status**: LIVE (Vercel default URL)
 **Health**: GREEN
 **GA4**: G-YZJZQWR330 (active)
-**Last Updated**: Session #079 — 2026-04-07
+**Last Updated**: Session #082 — 2026-04-09
 
 ## Overview
 Central hub for the Valitse comparison platform ecosystem. Acts as the spoke-and-hub center linking to all vertical comparison sites (sähkö, laina, vakuutus, puhelin).
@@ -19,6 +19,16 @@ Central hub for the Valitse comparison platform ecosystem. Acts as the spoke-and
 - **lucide-react dependency added**: Was missing, caused build failures
 
 ## Recent Changes
+
+### Session #082 — TypeScript Build Fix (2026-04-09)
+- **Fixed TypeScript build error**: Added `window.gtag` type declaration to `CookieConsent.tsx`
+- **Pushed to deploy repo**: Sonodo/vertaile — Vercel should rebuild automatically
+
+### Session #080 — Compliance Audit (2026-04-07)
+- **Cookie consent added**: GDPR-compliant cookie banner implemented
+- **Search improved**: Better fuzzy matching and keyword coverage
+- **Nav fixed**: Navigation links corrected across the hub
+- **Deployed**: Changes pushed to production
 
 ### Session #079 — Link Updates + Fixes (2026-04-07)
 - **GA4 G-YZJZQWR330 active**: Tracking confirmed

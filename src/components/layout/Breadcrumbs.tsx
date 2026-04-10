@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
-import { generateBreadcrumbSchema } from '@/lib/seo';
 
 interface BreadcrumbItem {
   label: string;
@@ -14,23 +13,11 @@ interface BreadcrumbsProps {
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   const allItems = [{ label: 'Etusivu', href: '/' }, ...items];
 
-  const schemaItems = allItems.map((item) => ({
-    name: item.label,
-    url: item.href,
-  }));
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema(schemaItems)),
-        }}
-      />
-      <nav aria-label="Murupolku" className="py-3">
-        <ol className="flex items-center gap-1 text-sm flex-wrap">
-          {allItems.map((item, index) => {
-            const isLast = index === allItems.length - 1;
+    <nav aria-label="Murupolku" className="py-3">
+      <ol className="flex items-center gap-1 text-sm flex-wrap">
+        {allItems.map((item, index) => {
+          const isLast = index === allItems.length - 1;
             return (
               <li key={index} className="flex items-center gap-1">
                 {index > 0 && (
@@ -53,7 +40,6 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
           })}
         </ol>
       </nav>
-    </>
   );
 }
 

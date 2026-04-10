@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Clock } from 'lucide-react';
 import { blogPosts } from '@/data/blog-posts';
+import { BLOG_CATEGORIES } from '@/lib/constants';
 import { formatDateFi } from '@/lib/utils';
 import Badge from '@/components/ui/Badge';
 
@@ -44,7 +45,7 @@ export default function LatestBlogPosts() {
             <div className="flex flex-1 flex-col p-6">
               {/* Category badge */}
               <div className="mb-3">
-                <Badge variant="default">{post.category}</Badge>
+                <Badge variant="default">{BLOG_CATEGORIES.find((c) => c.id === post.category)?.label ?? post.category.charAt(0).toUpperCase() + post.category.slice(1)}</Badge>
               </div>
 
               {/* Title */}

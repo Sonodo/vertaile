@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/layout/CookieConsent';
+
+const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || '';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,20 +30,11 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Vertaa kaikkea yhdestä paikasta`,
     description: SITE_DESCRIPTION,
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Valitse — Vertaa kaikkea yhdestä paikasta',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_NAME} — Vertaa kaikkea yhdestä paikasta`,
     description: SITE_DESCRIPTION,
-    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -85,7 +79,6 @@ export default function RootLayout({
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    sameAs: [],
   };
 
   return (
@@ -104,6 +97,16 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen bg-background text-foreground">
         <GoogleAnalytics />
+        {CLARITY_ID && (
+          <>
+            <Script id="ms-clarity" strategy="afterInteractive">
+              {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","${CLARITY_ID}");`}
+            </Script>
+            <Script id="clarity-consent-default" strategy="afterInteractive">
+              {`(function w(){if(window.clarity){var c=localStorage.getItem("analytics_consent");clarity("consentv2",{analytics_storage:c==="granted"?"granted":"denied",ad_storage:"denied"})}else{setTimeout(w,100)}})();`}
+            </Script>
+          </>
+        )}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:text-cyan-700 focus:text-sm focus:font-medium"

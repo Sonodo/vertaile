@@ -164,7 +164,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 6,
     author: 'Valitse-toimitus',
     tags: ['avioehto', 'avioliitto', 'lakiasiat', 'omaisuudensuoja'],
-    relatedSpokeIds: ['lakimaatti'],
+    relatedSpokeIds: [],
     content: `<h2>Avioehto — ei epäluottamusta vaan järkevää suunnittelua</h2>
 <p>Avioehtosopimus on yksi niistä asioista, joista moni pari välttelee puhumista. Se mielletään usein epäluottamuksen merkiksi tai avioeron suunnitteluksi. Todellisuudessa avioehto on järkevää taloudellista suunnittelua, joka suojaa molempia puolisoita ja selkeyttää omaisuusjärjestelyjä. Se on kuin vakuutus — toivot, ettet koskaan tarvitse sitä, mutta olet kiitollinen, jos tilanne tulee eteen.</p>
 <p>Suomessa ilman avioehtoa puolisoilla on avio-oikeus toistensa omaisuuteen. Tämä tarkoittaa, että avioeron tai puolison kuoleman yhteydessä omaisuus jaetaan tasan, riippumatta siitä, kumpi on tuonut omaisuuden avioliittoon tai ansainnut sen avioliiton aikana. Avioehto mahdollistaa tästä poikkeamisen.</p>
@@ -177,12 +177,12 @@ export const blogPosts: BlogPost[] = [
 <p>Avioehto voi olla täysin yksilöllinen. Yleisimmät vaihtoehdot ovat: täysin poissulkeva avioehto, jossa kummallakaan ei ole avio-oikeutta toisen omaisuuteen, osittainen avioehto, jossa vain tietty omaisuus (esimerkiksi yritys tai perintö) rajataan avio-oikeuden ulkopuolelle, ja yksipuolinen avioehto, jossa vain toisen puolison omaisuus on suojattu.</p>
 <p>Avioehto voidaan tehdä myös siten, että se on voimassa vain avioerotilanteessa mutta ei puolison kuollessa. Näin turvataan leski kuolemantapauksessa mutta suojataan omaisuus erotilanteessa. Tämä on erityisesti perheellisten pariskuntien keskuudessa suosittu vaihtoehto.</p>
 
-<h2>Näin teet avioehtosopimuksen helposti</h2>
-<p>Perinteisesti avioehdon tekeminen on vaatinut lakimieskäynnin, joka maksaa 500–1 500 euroa. Lakimaatin kautta avioehtosopimuksen voi tehdä verkossa murto-osalla tästä hinnasta. Palvelu ohjaa sinut prosessin läpi vaihe vaiheelta, varmistaa, että avioehto on juridisesti pätevä, ja tuottaa valmiin PDF-dokumentin, jonka voit tulostaa ja allekirjoittaa.</p>
-<p>Avioehtosopimus on rekisteröitävä Digi- ja väestötietovirastossa, jotta se on pätevä. Rekisteröinti maksaa tällä hetkellä noin 70 euroa. Rekisteröimätön avioehto ei ole oikeudellisesti sitova. Lakimaatti muistuttaa sinua rekisteröinnistä ja antaa selkeät ohjeet sen tekemiseen.</p>
+<h2>Näin teet avioehtosopimuksen</h2>
+<p>Perinteisesti avioehdon tekeminen on vaatinut lakimieskäynnin, joka maksaa 500–1 500 euroa. Nykyään avioehtosopimuksen voi tehdä myös edullisesti verkkopalveluiden kautta. Palvelu ohjaa sinut prosessin läpi vaihe vaiheelta, varmistaa, että avioehto on juridisesti pätevä, ja tuottaa valmiin dokumentin.</p>
+<p>Avioehtosopimus on rekisteröitävä Digi- ja väestötietovirastossa, jotta se on pätevä. Rekisteröinti maksaa tällä hetkellä noin 70 euroa. Rekisteröimätön avioehto ei ole oikeudellisesti sitova.</p>
 
 <h2>Avioehdon tekemisen ajankohta</h2>
-<p>Paras aika tehdä avioehto on ennen häitä, mutta sen voi tehdä myös avioliiton aikana. Molemmat puolisot allekirjoittavat sopimuksen, ja lisäksi tarvitaan kaksi esteetöntä todistajaa. Avioehtoa voidaan myös muuttaa myöhemmin, jos puolisoiden tilanne muuttuu — esimerkiksi yrityksen perustamisen tai perinnön saamisen yhteydessä. Hoida avioehto kuntoon Lakimaatin avulla ja varmista perheen taloudellinen turva.</p>`,
+<p>Paras aika tehdä avioehto on ennen häitä, mutta sen voi tehdä myös avioliiton aikana. Molemmat puolisot allekirjoittavat sopimuksen, ja lisäksi tarvitaan kaksi esteetöntä todistajaa. Avioehtoa voidaan myös muuttaa myöhemmin, jos puolisoiden tilanne muuttuu — esimerkiksi yrityksen perustamisen tai perinnön saamisen yhteydessä.</p>`,
   },
   {
     slug: 'taloudellinen-vapaus-opas',
