@@ -14,7 +14,7 @@ Central hub for the Valitse comparison platform ecosystem. Acts as the spoke-and
 - **GA4**: G-YZJZQWR330 active
 - **GSC**: Verification tag added
 - **OG image**: Regenerated (was old/stale)
-- **Spoke links**: Updated from unpurchased domains → live Vercel URLs → custom domains (valitsesahko.fi, valitselaina.fi, valitsevakuutus.fi, valitsepuhelin.fi)
+- **Spoke links**: Updated from unpurchased domains → live Vercel URLs → custom domains (valitsesahko.fi, valitselaina.fi, valitsevakuutus.fi, valitseliittyma.fi)
 - **Broken links fixed**, typos corrected throughout
 - **lucide-react dependency added**: Was missing, caused build failures
 
