@@ -8,7 +8,7 @@ import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/constants';
 import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import CookieConsent from '@/components/layout/CookieConsent';
 
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || '';
+const CLARITY_ID = process.env.NODE_ENV === 'production' ? 'w9nbcvt8tt' : '';
 
 const inter = Inter({
   subsets: ['latin'],

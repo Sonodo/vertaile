@@ -67,7 +67,7 @@ export const spokes: Spoke[] = [
     colorLight: '#CFFAFE',
     iconName: 'Shield',
     features: ['10 vakuutusyhtiön vertailu', 'Auto-, koti- ja matkavakuutukset', 'Jopa 50 % hintaero', 'Selkeät tuotevertailut', 'Vakuutusoppaat', 'Puolueeton arviointi'],
-    status: 'coming-soon',
+    status: 'live',
     vertical: 'insurance',
     verticalFi: 'Vakuutukset',
     ctaText: 'Vertaa vakuutuksia',
