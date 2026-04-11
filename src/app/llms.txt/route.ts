@@ -8,7 +8,7 @@ export async function GET() {
 ## Palvelut
 
 ### Asuntomaatti (asuntomaatti.fi)
-Monipuolinen asuntovertailupalvelu. 1 894 sivua, 9 laskuria, 293 kaupungin hintatiedot.
+Monipuolinen asuntovertailupalvelu. 1 800+ sivua, 9 laskuria, 293 kaupungin hintatiedot.
 
 ### Valitse Sähkö (valitsesahko.fi)
 Sähkösopimusten vertailu. 42 sähköyhtiötä, pörssisähkön reaaliaikaseuranta, 6 laskuria.
@@ -26,7 +26,7 @@ Puhelinliittymien ja laajakaistojen vertailu. 7 operaattoria, 50+ liittymää, m
 Tarjoukset ja alennukset kartalla. Päivittäin päivittyvä, kymmeniä kauppaketjuja.
 
 ### Fixmera (fixmera.com)
-Kotipalveluiden vertailu. 1 878 yritystä, 5 769 arvostelua, 9 palvelukategoriaa.
+Kotipalveluiden vertailu. 1 800+ yritystä, 5 700+ arvostelua, 9 palvelukategoriaa.
 
 ### Fillioneer (fillioneer.com)
 Henkilökohtaisen talouden seuranta. Varallisuuden seuranta, FIRE-laskuri, menoanalyysi.
@@ -41,7 +41,7 @@ Suomi (Finnish)
 Suomi (Finland)
 
 ## Yhteystiedot
-info@valitse.fi
+https://valitse.fi/yhteystiedot
 `;
 
   return new NextResponse(content, {

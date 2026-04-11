@@ -8,6 +8,7 @@ import { NAVIGATION } from '@/lib/constants';
 import { spokes } from '@/data/spokes';
 import { SpokeIcon } from '@/components/ui/SpokeIcon';
 import { NavSearch } from '@/components/layout/NavSearch';
+import { UserMenu } from '@/components/auth/UserMenu';
 import { cn } from '@/lib/utils';
 
 export function Header() {
@@ -63,15 +64,15 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-200">
+    <header className="sticky top-0 z-50 glass-dark border-b border-white/10">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Päänavigaatio">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group" aria-label="Valitse etusivu">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0B1F3F, #0891B2)' }}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-accent-400 to-accent">
               <Layers className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900 group-hover:text-cyan-700 transition-colors">
+            <span className="text-xl font-bold text-white group-hover:text-accent-300 transition-colors">
               Valitse
             </span>
           </Link>
@@ -90,10 +91,10 @@ export function Header() {
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className={cn(
-                      'flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                      'flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors min-h-[44px]',
                       isActive(item.href)
-                        ? 'text-cyan-700 bg-cyan-50'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                        ? 'text-white bg-white/15'
+                        : 'text-slate-300 hover:text-white hover:bg-white/10'
                     )}
                     aria-expanded={dropdownOpen}
                     aria-haspopup="true"
@@ -104,7 +105,7 @@ export function Header() {
 
                   {dropdownOpen && (
                     <div
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[640px] bg-white rounded-xl shadow-xl border border-slate-200 p-4 animate-fade-in-up"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[640px] bg-white rounded-xl shadow-xl border border-slate-200 p-4 animate-scale-in"
                       onMouseEnter={handleDropdownEnter}
                       onMouseLeave={handleDropdownLeave}
                     >
@@ -136,7 +137,7 @@ export function Header() {
                       <div className="mt-3 pt-3 border-t border-slate-100">
                         <Link
                           href="/palvelut"
-                          className="text-sm font-medium text-cyan-700 hover:text-cyan-800 transition-colors"
+                          className="text-sm font-medium text-accent hover:text-accent-600 transition-colors"
                         >
                           Kaikki palvelut &rarr;
                         </Link>
@@ -149,10 +150,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                    'px-3 py-2 rounded-lg text-sm font-medium transition-colors min-h-[44px] inline-flex items-center',
                     isActive(item.href)
-                      ? 'text-cyan-700 bg-cyan-50'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                      ? 'text-white bg-white/15'
+                      : 'text-slate-300 hover:text-white hover:bg-white/10'
                   )}
                 >
                   {item.label}
@@ -161,13 +162,22 @@ export function Header() {
             )}
           </div>
 
-          {/* Search */}
-          <NavSearch />
+          {/* Search + Auth + CTA */}
+          <div className="flex items-center gap-2">
+            <NavSearch />
+            <UserMenu />
+            <Link
+              href="/palvelut"
+              className="hidden lg:inline-flex items-center bg-accent text-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-accent-600 transition-colors min-h-[44px]"
+            >
+              Aloita vertailu
+            </Link>
+          </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-label={mobileOpen ? 'Sulje valikko' : 'Avaa valikko'}
             aria-expanded={mobileOpen}
           >
@@ -180,20 +190,20 @@ export function Header() {
       {mobileOpen && (
         <>
           <div
-            className="fixed inset-0 top-16 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
+            className="fixed inset-0 top-16 bg-black/40 backdrop-blur-sm z-40 lg:hidden"
             onClick={() => setMobileOpen(false)}
             aria-hidden="true"
           />
-          <div className="fixed top-16 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-xl z-50 lg:hidden overflow-y-auto">
+          <div className="fixed top-16 right-0 bottom-0 w-80 max-w-[85vw] glass-dark shadow-xl z-50 lg:hidden overflow-y-auto border-l border-white/10">
             <nav className="p-4 space-y-1" aria-label="Mobiilinavigaatio">
               {/* Palvelut section */}
-              <div className="pb-3 mb-3 border-b border-slate-100">
+              <div className="pb-3 mb-3 border-b border-white/10">
                 <p className="px-3 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Palvelut</p>
                 {spokes.map((spoke) => (
                   <Link
                     key={spoke.id}
                     href={`/palvelut/${spoke.slug}`}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 transition-colors"
+                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/10 transition-colors min-h-[44px]"
                     onClick={() => setMobileOpen(false)}
                   >
                     <div
@@ -202,7 +212,7 @@ export function Header() {
                     >
                       <SpokeIcon iconName={spoke.iconName} size={16} style={{ color: spoke.color }} />
                     </div>
-                    <span className="text-sm font-medium text-slate-700">{spoke.name}</span>
+                    <span className="text-sm font-medium text-slate-200">{spoke.name}</span>
                     {spoke.status === 'coming-soon' && (
                       <span className="text-[10px] font-medium px-1.5 py-0.5 rounded-full bg-amber-100 text-amber-700 ml-auto">Tulossa</span>
                     )}
@@ -216,19 +226,30 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors',
+                    'block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors min-h-[44px]',
                     isActive(item.href)
-                      ? 'text-cyan-700 bg-cyan-50'
-                      : 'text-slate-700 hover:text-slate-900 hover:bg-slate-50'
+                      ? 'text-white bg-white/15'
+                      : 'text-slate-300 hover:text-white hover:bg-white/10'
                   )}
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
                   {item.description && (
-                    <span className="block text-xs text-slate-400 mt-0.5">{item.description}</span>
+                    <span className="block text-xs text-slate-500 mt-0.5">{item.description}</span>
                   )}
                 </Link>
               ))}
+
+              {/* Mobile CTA */}
+              <div className="pt-4 mt-4 border-t border-white/10">
+                <Link
+                  href="/palvelut"
+                  className="flex items-center justify-center w-full bg-accent text-white rounded-lg px-4 py-3 text-sm font-semibold hover:bg-accent-600 transition-colors min-h-[44px]"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Aloita vertailu
+                </Link>
+              </div>
             </nav>
           </div>
         </>

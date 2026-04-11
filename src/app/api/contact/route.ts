@@ -67,9 +67,9 @@ export async function POST(request: NextRequest) {
 
     // If RESEND_API_KEY is configured, send email
     const resendKey = process.env.RESEND_API_KEY;
-    const contactEmail = process.env.CONTACT_EMAIL || 'info@valitse.fi';
+    const contactEmail = process.env.CONTACT_EMAIL;
 
-    if (resendKey) {
+    if (resendKey && contactEmail) {
       const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
           Authorization: `Bearer ${resendKey}`,
         },
         body: JSON.stringify({
-          from: `Valitse Yhteydenotto <noreply@valitse.fi>`,
+          from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
           to: [contactEmail],
           reply_to: body.email,
           subject: `[Valitse] ${body.subject}: ${body.name}`,

@@ -70,12 +70,8 @@ export default function BlogIndexClient({ posts, categories }: BlogIndexClientPr
                 </p>
                 <div className="mt-6 flex items-center gap-4 text-sm text-slate-500">
                   <span className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4" />
-                    {formatDateFi(featuredPost.publishedAt)}
-                  </span>
-                  <span className="flex items-center gap-1.5">
                     <Clock className="h-4 w-4" />
-                    {featuredPost.readTime} min
+                    {featuredPost.readTime} min lukuaika
                   </span>
                 </div>
               </div>
@@ -106,12 +102,8 @@ export default function BlogIndexClient({ posts, categories }: BlogIndexClientPr
                     </p>
                     <div className="mt-4 flex items-center gap-4 border-t border-slate-100 pt-4 text-xs text-slate-500">
                       <span className="flex items-center gap-1">
-                        <Calendar className="h-3.5 w-3.5" />
-                        {formatDateFi(post.publishedAt)}
-                      </span>
-                      <span className="flex items-center gap-1">
                         <Clock className="h-3.5 w-3.5" />
-                        {post.readTime} min
+                        {post.readTime} min lukuaika
                       </span>
                     </div>
                   </div>

@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
               <h2>1. Rekisterinpitäjä</h2>
               <p>
                 <strong>Sonodo</strong><br />
-                Sähköposti: info@valitse.fi
+                Helsinki, Suomi
               </p>
               <p>
                 Tämä tietosuojaseloste koskee Valitse-palvelua (valitse.fi) ja siihen liittyviä
@@ -180,8 +180,8 @@ export default function PrivacyPolicyPage() {
                 </li>
               </ul>
               <p>
-                Voit käyttää oikeuksiasi ottamalla meihin yhteyttä osoitteessa{' '}
-                <a href="mailto:info@valitse.fi">info@valitse.fi</a>. Vastaamme pyyntöösi
+                Voit käyttää oikeuksiasi ottamalla meihin yhteyttä{' '}
+                <a href="/yhteystiedot">yhteydenottosivullamme</a>. Vastaamme pyyntöösi
                 30 päivän kuluessa.
               </p>
               <p>
@@ -207,8 +207,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <p>
                 <strong>Sonodo</strong><br />
-                Sähköposti:{' '}
-                <a href="mailto:info@valitse.fi">info@valitse.fi</a>
+                <a href="/yhteystiedot">Ota yhteyttä</a>
               </p>
               <p>
                 Pyrimme vastaamaan kaikkiin tiedusteluihin mahdollisimman nopeasti, viimeistään

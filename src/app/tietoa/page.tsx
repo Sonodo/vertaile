@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: Scale,
-    title: 'Puolueeton',
+    title: 'Läpinäkyvä',
     description:
-      'Näytämme kaikki vaihtoehdot — myös ne, joista emme saa komissiota. Kumppanuudet eivät koskaan vaikuta tuotteiden järjestykseen tai arviointiin. Vertailumme perustuu aina objektiiviseen dataan.',
+      'Näytämme kattavasti eri vaihtoehdot — myös ne, joista emme saa komissiota. Kumppanuudet eivät vaikuta tuotteiden järjestykseen. Vertailumenetelmämme on avoimesti dokumentoitu.',
   },
   {
     icon: Globe,
@@ -169,12 +169,12 @@ export default function TietoaPage() {
               datalähtöisiä palveluita kuluttajien hyödyksi.
             </p>
             <p className="mt-3 text-slate-600">
-              Voit ottaa meihin yhteyttä sähköpostilla osoitteessa{' '}
+              Voit ottaa meihin yhteyttä{' '}
               <a
-                href="mailto:info@valitse.fi"
+                href="/yhteystiedot"
                 className="font-medium text-[#0891B2] no-underline hover:underline"
               >
-                info@valitse.fi
+                yhteydenottosivullamme
               </a>
               . Vastaamme viesteihin 1–2 arkipäivän kuluessa.
             </p>

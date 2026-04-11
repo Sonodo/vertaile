@@ -308,7 +308,7 @@ export default function SearchClient() {
                       <p className="mt-1 flex-1 text-sm text-slate-600">{post.description}</p>
                       <div className="mt-3 flex items-center justify-between">
                         <span className="text-xs font-medium text-slate-500">
-                          {new Date(post.publishedAt).toLocaleDateString('fi-FI')}
+                          {post.readTime} min lukuaika
                         </span>
                         <span className="flex items-center gap-1 text-sm font-semibold text-[#0891B2] transition-colors group-hover:text-[#0891B2]/80">
                           Lue

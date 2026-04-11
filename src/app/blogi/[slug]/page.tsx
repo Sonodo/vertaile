@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Etusivu', url: '/' },
-    { name: 'Blogi', url: '/blogi' },
+    { name: 'Artikkelit', url: '/blogi' },
     { name: post.title },
   ]);
 
@@ -81,7 +81,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
             <Breadcrumbs
               items={[
-                { label: 'Blogi', href: '/blogi' },
+                { label: 'Artikkelit', href: '/blogi' },
                 { label: post.title },
               ]}
             />
@@ -111,10 +111,6 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   {post.title}
                 </h1>
                 <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-500">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4" />
-                    {formatDateFi(post.publishedAt)}
-                  </span>
                   <span className="flex items-center gap-1.5">
                     <Clock className="h-4 w-4" />
                     {post.readTime} min lukuaika
@@ -218,12 +214,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       </p>
                       <div className="mt-4 flex items-center gap-4 border-t border-slate-100 pt-4 text-xs text-slate-500">
                         <span className="flex items-center gap-1">
-                          <Calendar className="h-3.5 w-3.5" />
-                          {formatDateFi(otherPost.publishedAt)}
-                        </span>
-                        <span className="flex items-center gap-1">
                           <Clock className="h-3.5 w-3.5" />
-                          {otherPost.readTime} min
+                          {otherPost.readTime} min lukuaika
                         </span>
                       </div>
                     </div>

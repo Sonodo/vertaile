@@ -47,7 +47,7 @@ const sections = [
     content: [
       'Jokainen vertailupalvelumme käyttää vertailulle ominaista metodologiaa. Sähkövertailussa vertailemme sähkösopimuksia kuluttajan ilmoittaman vuosikulutuksen ja sijainnin perusteella. Lainavertailussa vertailemme todellisia vuosikorkoja (TAE), jotka sisältävät kaikki lainan kulut.',
       'Oletusarvoisesti tulokset järjestetään hinnalla tai kustannuksella. Käyttäjä voi aina muuttaa järjestystä haluamallaan tavalla — esimerkiksi asiakastyytyväisyyden, kattavuuden tai yrityksen koon mukaan.',
-      'Emme käytä subjektiivisia "tähtiarvioita" tai pisteytyksiä, jotka voisivat olla harhaanjohtavia. Sen sijaan näytämme objektiivista dataa ja annamme kuluttajan tehdä päätöksen itse.',
+      'Emme käytä subjektiivisia "tähtiarvioita" tai pisteytyksiä, jotka voisivat olla harhaanjohtavia. Sen sijaan näytämme avointa dataa ja annamme kuluttajan tehdä päätöksen itse.',
     ],
   },
   {
@@ -75,7 +75,7 @@ const sections = [
     icon: MessageSquare,
     title: 'Palaute ja korjaukset',
     content: [
-      'Inhimilliset virheet ja tekniset häiriöt ovat mahdollisia. Jos huomaat virheellisen tiedon palvelussamme, voit ilmoittaa siitä meille osoitteeseen info@valitse.fi. Käsittelemme virheraporttejamme nopeasti ja korjaamme virheelliset tiedot mahdollisimman pian.',
+      'Inhimilliset virheet ja tekniset häiriöt ovat mahdollisia. Jos huomaat virheellisen tiedon palvelussamme, voit ilmoittaa siitä meille yhteydenottosivullamme. Käsittelemme virheraporttejamme nopeasti ja korjaamme virheelliset tiedot mahdollisimman pian.',
       'Otamme mielellämme vastaan myös palautetta ja kehitysehdotuksia. Haluamme rakentaa palvelun, joka palvelee suomalaisia kuluttajia mahdollisimman hyvin.',
       'Palveluntarjoajat voivat myös ilmoittaa meille, jos heidän tietonsa ovat vanhentuneet tai virheelliset. Päivitämme tiedot tarkistuksen jälkeen.',
     ],

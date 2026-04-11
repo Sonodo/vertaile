@@ -26,7 +26,7 @@ const contactFaqs = [
   {
     question: 'Miten palveluntarjoaja voi liittyä vertailuun?',
     answer:
-      'Palveluntarjoajat voivat ottaa yhteyttä osoitteeseen info@valitse.fi aiheella "Yhteistyö". Kerromme mielellämme lisää kumppanuusmahdollisuuksista. Huomioithan, että näytämme vertailutuloksissa myös ei-kumppaneita — kumppanuus ei ole edellytys vertailussa mukana olemiselle.',
+      'Palveluntarjoajat voivat ottaa meihin yhteyttä alla olevan yhteydenottolomakkeen kautta aiheella "Yhteistyö". Kerromme mielellämme lisää kumppanuusmahdollisuuksista. Huomioithan, että näytämme vertailutuloksissa myös ei-kumppaneita — kumppanuus ei ole edellytys vertailussa mukana olemiselle.',
   },
 ];
 
@@ -72,25 +72,22 @@ export default function YhteystiedotPage() {
         <section className="mb-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Left: Contact Info */}
           <div className="space-y-6">
-            {/* Email card */}
+            {/* Contact info card */}
             <div className="rounded-xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
               <div className="mb-3 flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0891B2]/10">
                   <Mail className="h-5 w-5 text-[#0891B2]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#0B1F3F]">Sähköposti</h3>
-                  <a
-                    href="mailto:info@valitse.fi"
-                    className="text-sm text-[#0891B2] hover:underline"
-                  >
-                    info@valitse.fi
-                  </a>
+                  <h3 className="font-semibold text-[#0B1F3F]">Yhteydenotto</h3>
+                  <span className="text-sm text-[#0891B2]">
+                    Yhteydenottolomake tulossa pian
+                  </span>
                 </div>
               </div>
               <p className="text-sm text-slate-600">
-                Voit myös lähettää meille viestin suoraan sähköpostilla. Käytä
-                yhteydenottolomaketta nopeampaan palveluun.
+                Yhteydenottolomake on tulossa pian. Voit sillä lähettää meille
+                palautetta, kysymyksiä ja virheilmoituksia.
               </p>
             </div>
 

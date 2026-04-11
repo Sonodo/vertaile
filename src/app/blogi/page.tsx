@@ -6,13 +6,13 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 import BlogIndexClient from './BlogIndexClient';
 
 export const metadata: Metadata = {
-  title: 'Blogi',
+  title: 'Artikkelit',
   description: `${SITE_NAME}-blogi: vinkkejä, oppaita ja ajankohtaisia artikkeleita vertailuun, säästämiseen ja arjen talousvalintoihin.`,
   alternates: {
     canonical: `${SITE_URL}/blogi`,
   },
   openGraph: {
-    title: `Blogi — ${SITE_NAME}`,
+    title: `Artikkelit — ${SITE_NAME}`,
     description: 'Vinkkejä, oppaita ja ajankohtaista vertailuun ja säästämiseen.',
     url: `${SITE_URL}/blogi`,
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Etusivu', url: '/' },
-    { name: 'Blogi' },
+    { name: 'Artikkelit' },
   ]);
 
   return (
@@ -37,7 +37,7 @@ export default function BlogPage() {
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <Breadcrumbs
               items={[
-                { label: 'Blogi' },
+                { label: 'Artikkelit' },
               ]}
             />
             <div className="mt-6 max-w-3xl">

@@ -17,7 +17,7 @@ export const spokes: Spoke[] = [
     vertical: 'property',
     verticalFi: 'Asunnot',
     ctaText: 'Vertaa asuntoja',
-    stats: [{ label: 'Sivuja', value: '1 894' }, { label: 'Laskuria', value: '9' }, { label: 'Kaupunkia', value: '293' }],
+    stats: [{ label: 'Sivuja', value: '1 800+' }, { label: 'Laskuria', value: '9' }, { label: 'Kaupunkia', value: '293' }],
   },
   {
     id: 'energiavertailu',
@@ -125,7 +125,7 @@ export const spokes: Spoke[] = [
     vertical: 'home-services',
     verticalFi: 'Kotipalvelut',
     ctaText: 'Etsi palveluita',
-    stats: [{ label: 'Yritystä', value: '1 878' }, { label: 'Arvostelua', value: '5 769' }, { label: 'Sivuja', value: '2 074' }],
+    stats: [{ label: 'Yritystä', value: '1 800+' }, { label: 'Arvostelua', value: '5 700+' }, { label: 'Sivuja', value: '2 000+' }],
   },
   {
     id: 'fillioneer',

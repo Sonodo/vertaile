@@ -203,9 +203,8 @@ export default function CookiePolicyPage() {
                 <a href="/tietosuoja">tietosuojaselosteestamme</a>.
               </p>
               <p>
-                Jos sinulla on kysyttävää evästekäytännöstämme, ota meihin yhteyttä
-                osoitteessa{' '}
-                <a href="mailto:info@valitse.fi">info@valitse.fi</a>.
+                Jos sinulla on kysyttävää evästekäytännöstämme, ota meihin yhteyttä{' '}
+                <a href="/yhteystiedot">yhteydenottosivullamme</a>.
               </p>
             </div>
           </div>

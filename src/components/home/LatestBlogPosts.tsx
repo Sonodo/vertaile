@@ -60,10 +60,9 @@ export default function LatestBlogPosts() {
 
               {/* Meta */}
               <div className="mt-4 flex items-center gap-4 text-xs text-slate-500">
-                <span>{formatDateFi(post.publishedAt)}</span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-3.5 w-3.5" />
-                  {post.readTime} min
+                  {post.readTime} min lukuaika
                 </span>
               </div>
             </div>

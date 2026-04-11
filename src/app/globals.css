@@ -1,53 +1,224 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-:root {
-  --color-primary: #0B1F3F;
-  --color-primary-light: #1A3A6B;
-  --color-accent: #0891B2;
-  --color-accent-light: #22D3EE;
-  --color-highlight: #F59E0B;
-  --color-highlight-light: #FBBF24;
+@theme inline {
+  --color-accent-50: #ecfeff;
+  --color-accent-100: #cffafe;
+  --color-accent-200: #a5f3fc;
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent: #0891b2;
+  --color-accent-600: #0e7490;
+  --color-accent-700: #155e75;
+  --color-accent-800: #164e63;
+  --color-accent-900: #083344;
+  --color-secondary: #f59e0b;
+  --color-secondary-400: #fbbf24;
+  --color-secondary-500: #f59e0b;
+  --color-secondary-600: #d97706;
+  --color-navy: #0B1F3F;
+  --color-navy-light: #1A3A6B;
+  --color-navy-dark: #061224;
   --color-background: #F8FAFC;
   --color-foreground: #0F172A;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--color-background);
-  --color-foreground: var(--color-foreground);
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-}
+/* ── Base ────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  padding-bottom: env(safe-area-inset-bottom);
 }
-
-* { -webkit-tap-highlight-color: transparent; }
 
 ::selection {
   background-color: rgba(8, 145, 178, 0.15);
   color: inherit;
 }
 
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-accent), 0 0 0 4px rgba(8, 145, 178, 0.2);
+  border-radius: 4px;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Form Styling ────────────────────────────────── */
+
+input, textarea, select {
+  @apply rounded-lg border border-slate-300 bg-white px-4 py-3 text-base
+         transition-colors duration-200
+         placeholder:text-slate-400
+         hover:border-slate-400
+         focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+  font-size: max(16px, 1em);
+}
+
+input[type='checkbox'] {
+  @apply h-5 w-5 cursor-pointer rounded border-slate-300 text-accent focus:ring-accent;
+}
+
+/* ── Component Classes ───────────────────────────── */
+
+@layer components {
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white p-6 ring-1 ring-slate-200/60 shadow-sm;
+  }
+
+  .card-hover {
+    @apply rounded-2xl bg-white p-6 ring-1 ring-slate-200/60 shadow-sm
+           transition-all duration-300
+           hover:shadow-lg hover:ring-accent/30 hover:-translate-y-1
+           active:translate-y-0;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3
+           font-semibold transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           min-h-[44px];
+  }
+  .btn:active {
+    transform: translateY(1.5px);
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white shadow-sm shadow-accent/25
+           hover:bg-accent-600 hover:shadow-md hover:shadow-accent/30;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-slate-700 ring-1 ring-slate-200
+           hover:bg-slate-50 hover:ring-slate-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-accent text-accent
+           hover:bg-accent hover:text-white;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl font-bold tracking-tight text-slate-900;
+  }
+
+  .section-subtitle {
+    @apply mt-3 text-lg text-slate-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  .badge-accent {
+    @apply bg-accent/10 text-accent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply bg-navy/95 backdrop-blur-md;
+  }
+
+  .form-group {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-slate-700;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600;
+  }
+
+  .spinner {
+    @apply inline-block h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent;
+  }
+
+  .progress-bar {
+    @apply h-2 overflow-hidden rounded-full bg-slate-200;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full bg-accent transition-all duration-500;
+  }
+}
+
+/* ── Animations (Keyframes) ──────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
 }
 
 .animate-shimmer {
@@ -56,30 +227,24 @@ html {
   animation: shimmer 1.5s infinite;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
-}
+/* ── Stagger Classes ─────────────────────────────── */
 
-.animate-stagger-1 { animation-delay: 0.05s; }
-.animate-stagger-2 { animation-delay: 0.1s; }
-.animate-stagger-3 { animation-delay: 0.15s; }
-.animate-stagger-4 { animation-delay: 0.2s; }
-.animate-stagger-5 { animation-delay: 0.25s; }
-.animate-stagger-6 { animation-delay: 0.3s; }
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-in-up { animation: none; opacity: 1; transform: none; }
-}
+/* ── Card Hover Lift (legacy compat) ─────────────── */
 
 .card-hover-lift {
   transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
@@ -88,9 +253,25 @@ html {
   transform: translateY(-2px);
 }
 
+/* ── Scrollbar ───────────────────────────────────── */
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Reduced Motion ──────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
   .card-hover-lift:hover { transform: none; }
 }
+
+/* ── Print ───────────────────────────────────────── */
 
 @media print {
   header, footer, .no-print, [data-no-print], button:not(.print-keep) { display: none !important; }
