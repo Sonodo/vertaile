@@ -9,9 +9,12 @@ declare global {
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-function updateClarityConsent(granted: boolean) {
+function updateClarityConsent(granted: boolean, retries = 10) {
   const w = window as unknown as { clarity?: (...args: unknown[]) => void };
-  if (!w.clarity) return;
+  if (!w.clarity) {
+    if (retries > 0) setTimeout(() => updateClarityConsent(granted, retries - 1), 200);
+    return;
+  }
   w.clarity('consentv2', {
     analytics_storage: granted ? 'granted' : 'denied',
     ad_storage: 'denied',
