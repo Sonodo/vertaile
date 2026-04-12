@@ -90,8 +90,6 @@ export default function RootLayout({
             __html: JSON.stringify([websiteSchema, organizationSchema]),
           }}
         />
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0B1F3F" />
       </head>

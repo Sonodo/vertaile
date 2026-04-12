@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Layers, Menu, X, ChevronDown } from 'lucide-react';
 import { NAVIGATION } from '@/lib/constants';
@@ -68,13 +69,15 @@ export function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Päänavigaatio">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group" aria-label="Valitse etusivu">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-gradient-to-br from-accent-400 to-accent">
-              <Layers className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white group-hover:text-accent-300 transition-colors">
-              Valitse
-            </span>
+          <Link href="/" className="flex items-center group hover:opacity-90 transition-opacity" aria-label="Valitse etusivu">
+            <Image
+              src="/logo.png"
+              alt="Valitse.fi"
+              width={865}
+              height={279}
+              priority
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop navigation */}
