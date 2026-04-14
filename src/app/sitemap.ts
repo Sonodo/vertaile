@@ -11,7 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/palvelut`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: `${SITE_URL}/elamanmuutokset`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${SITE_URL}/blogi`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
-    { url: `${SITE_URL}/haku`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+    // /haku is a query reflector, not a content page. Demoted to lowest priority
+    // and yearly changefreq so Google won't waste crawl budget on it.
+    { url: `${SITE_URL}/haku`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.1 },
     { url: `${SITE_URL}/tietoa`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${SITE_URL}/menetelma`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: `${SITE_URL}/yhteystiedot`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },

@@ -41,37 +41,37 @@ const verticals = [
     id: 'sahko',
     name: 'Valitse Sähkö',
     tagline: 'Vertaa sähkösopimuksia',
-    description: 'Vertaa 42 sähköyhtiön hintoja, seuraa pörssisähköä reaaliajassa ja löydä edullisin sopimus — kiinteä, pörssi tai hybridi.',
+    description: 'Vertaa Suomen sähköyhtiöiden hintoja, seuraa pörssisähköä reaaliajassa ja löydä edullisin sopimus — kiinteä, pörssi tai hybridi.',
     icon: Zap,
     color: '#0066FF',
     colorLight: '#DBEAFE',
     url: 'https://valitsesahko.fi',
-    stats: '42 sähköyhtiötä',
-    features: ['Pörssisähkön seuranta', '6 laskuria', 'Riskiarviointi'],
+    stats: 'Kattava vertailu',
+    features: ['Pörssisähkön seuranta', 'Useita laskureita', 'Riskiarviointi'],
   },
   {
     id: 'lainat',
     name: 'Valitse Laina',
-    tagline: 'Vertaa lainoja rehellisesti',
-    description: 'Vertaa kulutusluottoja, asuntolainoja ja yhdistelylainoja 28+ lainanantajalta. Järjestys perustuu hintaan ja todelliseen vuosikorkoon.',
+    tagline: 'Vertaa lainoja',
+    description: 'Vertaa kulutusluottoja, asuntolainoja ja yhdistelylainoja Suomen lainanantajilta. Järjestys perustuu hintaan ja todelliseen vuosikorkoon.',
     icon: Landmark,
     color: '#7C3AED',
     colorLight: '#EDE9FE',
     url: 'https://valitselaina.fi',
-    stats: '28+ lainanantajaa',
-    features: ['Todelliset vuosikorot', '6 lainalaskuria', 'Avoin menetelmä'],
+    stats: 'Avoin menetelmä',
+    features: ['Todelliset vuosikorot', 'Lainalaskurit', 'Puolueeton järjestys'],
   },
   {
     id: 'vakuutukset',
     name: 'Valitse Vakuutus',
     tagline: 'Vertaa vakuutuksia',
-    description: 'Vertaa auto-, koti-, matka- ja lemmikkivakuutuksia Suomen johtavilta vakuutusyhtiöiltä. Vakuutusten hintaero voi olla jopa 50 %.',
+    description: 'Vertaa auto-, koti-, matka- ja lemmikkivakuutuksia Suomen johtavilta vakuutusyhtiöiltä. Vakuutusten hintaerot voivat olla merkittäviä.',
     icon: Shield,
     color: '#0891B2',
     colorLight: '#CFFAFE',
     url: 'https://valitsevakuutus.fi',
-    stats: '10 vakuutusyhtiötä',
-    features: ['7 vakuutuslajia', 'Hintavertailu', 'Vakuutusoppaat'],
+    stats: 'Kattava vertailu',
+    features: ['Useita vakuutuslajeja', 'Hintavertailu', 'Vakuutusoppaat'],
   },
   {
     id: 'liittymat',
@@ -82,8 +82,8 @@ const verticals = [
     color: '#8B5CF6',
     colorLight: '#EDE9FE',
     url: 'https://valitseliittyma.fi',
-    stats: '7 operaattoria',
-    features: ['50+ liittymää', 'Mobiili ja laajakaista', 'Operaattorivertailut'],
+    stats: 'Kattava vertailu',
+    features: ['Mobiili ja laajakaista', 'Operaattorivertailut', 'Kaupunkisivut'],
   },
 ];
 
@@ -94,7 +94,7 @@ const moreServices = [
     icon: Home,
     color: '#059669',
     url: 'https://asuntomaatti.fi',
-    stat: '1 894 sivua',
+    stat: 'Tuhansia sivuja',
   },
   {
     name: 'Alennuskartta',
@@ -102,7 +102,7 @@ const moreServices = [
     icon: Tag,
     color: '#F97316',
     url: 'https://alennuskartta.fi',
-    stat: '800+ kauppaa',
+    stat: 'Satoja kauppoja',
   },
   {
     name: 'Fixmera',
@@ -110,7 +110,7 @@ const moreServices = [
     icon: Wrench,
     color: '#2563EB',
     url: 'https://fixmera.com',
-    stat: '1 878 yritystä',
+    stat: 'Tuhansia yrityksiä',
   },
   {
     name: 'Fillioneer',
@@ -118,7 +118,7 @@ const moreServices = [
     icon: TrendingUp,
     color: '#059669',
     url: 'https://fillioneer.com',
-    stat: '9+ laskuria',
+    stat: 'Useita laskureita',
   },
 ];
 
@@ -173,11 +173,11 @@ const faqItems = [
   },
   {
     q: 'Miten Valitse eroaa muista vertailupalveluista?',
-    a: 'Valitse on monipuolinen vertailupalvelu. Yhdestä paikasta voit vertailla sähköä, lainoja, vakuutuksia, liittymiä ja paljon muuta. Pyrimme näyttämään kattavasti eri palveluntarjoajat.',
+    a: 'Valitse kokoaa kahdeksan erikoistunutta vertailupalvelua saman brändin alle. Yhdestä paikasta voit vertailla sähköä, lainoja, vakuutuksia, liittymiä ja paljon muuta. Pyrimme näyttämään kattavasti eri palveluntarjoajat, yhtenäisellä järjestelyperusteella.',
   },
   {
     q: 'Miten vertailutulokset määräytyvät?',
-    a: 'Vertailun järjestys perustuu objektiivisiin kriteereihin: hintaan, ominaisuuksiin ja ajantasaiseen dataan. Sama menetelmä koskee jokaista tuotetta. Lue lisää sivulta /menetelma.',
+    a: 'Vertailun järjestys perustuu objektiivisiin kriteereihin: hintaan, ominaisuuksiin ja ajantasaiseen dataan. Sama kriteeristö kaikille tuotteille. Lue tarkemmin Menetelmä-sivulta.',
   },
   {
     q: 'Mitä kaikkea voin vertailla?',
@@ -185,7 +185,7 @@ const faqItems = [
   },
   {
     q: 'Voinko luottaa Valitseen?',
-    a: 'Valitse on suomalainen palvelu. Vertailun järjestys perustuu aina hintaan ja ominaisuuksiin, ja vertailumenetelmämme on avoimesti dokumentoitu sivulla /menetelma.',
+    a: 'Valitse on suomalainen palvelu. Vertailun järjestys perustuu aina hintaan ja ominaisuuksiin, ja vertailumenetelmämme on avoimesti dokumentoitu Menetelmä-sivulla.',
   },
   {
     q: 'Miten pääsen alkuun?',
@@ -280,7 +280,7 @@ export default function HomeContent() {
                 href="/palvelut"
                 className="group inline-flex items-center justify-center border-2 border-accent bg-accent px-6 py-3 sm:px-8 sm:py-4 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-transparent hover:text-white"
               >
-                Aloita vertailu
+                Katso kaikki palvelut
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -299,14 +299,14 @@ export default function HomeContent() {
               className="mt-14 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
             >
               {[
-                { value: '8+', label: 'vertailupalvelua' },
-                { value: '50+', label: 'palveluntarjoajaa' },
-                { value: '100%', label: 'ilmainen' },
+                { value: '8', label: 'vertailupalvelua' },
+                { value: 'Kattava', label: 'palveluntarjoajaverkosto' },
+                { value: '100 %', label: 'ilmainen' },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-6">
                   {i > 0 && <div className="h-8 w-px bg-white/10" />}
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-white">{item.value}</p>
+                    <p className="text-2xl font-bold text-white whitespace-nowrap">{item.value}</p>
                     <p className="text-sm text-slate-400">{item.label}</p>
                   </div>
                 </div>
@@ -326,7 +326,7 @@ export default function HomeContent() {
           {[
             { icon: Shield, text: 'Laaja vertailu', color: 'text-accent' },
             { icon: Check, text: 'Ilmainen palvelu', color: 'text-emerald-500' },
-            { icon: Users, text: '50+ palveluntarjoajaa', color: 'text-accent-400' },
+            { icon: Users, text: 'Kattava tarjoajaverkosto', color: 'text-accent-400' },
             { icon: Zap, text: 'Säännöllisesti tarkistettu', color: 'text-amber-500' },
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 0.1} direction="up">
@@ -517,10 +517,10 @@ export default function HomeContent() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <StatsCounter
             stats={[
-              { end: 8, suffix: '+', label: 'Vertailupalvelua' },
-              { end: 50, suffix: '+', label: 'Palveluntarjoajaa' },
-              { end: 6000, suffix: '+', label: 'Sisältösivua' },
-              { end: 0, suffix: ' €', label: 'Hintaa palvelusta' },
+              { end: 8, suffix: '', label: 'Vertailupalvelua' },
+              { end: 293, suffix: '', label: 'Kaupungin hintadata' },
+              { end: 4500, suffix: '+', label: 'Sisältösivua' },
+              { end: 100, suffix: ' %', label: 'Ilmainen käyttää' },
             ]}
           />
         </div>
@@ -536,7 +536,7 @@ export default function HomeContent() {
           <ScrollReveal direction="up">
             <div className="mb-12 text-center">
               <h2 className="text-2xl font-extrabold uppercase tracking-wide text-slate-900 sm:text-3xl">
-                Ja paljon muuta
+                Verkoston muut palvelut
               </h2>
               <p className="mt-3 text-slate-500">
                 Valitse-verkostoon kuuluu myös näitä erikoistuneita palveluita
@@ -562,8 +562,9 @@ export default function HomeContent() {
                   <h3 className="text-sm font-bold text-slate-900 group-hover:text-accent">{svc.name}</h3>
                   <p className="mt-1 text-xs text-slate-500">{svc.stat}</p>
                   <p className="mt-2 text-xs leading-relaxed text-slate-600">{svc.description}</p>
-                  <span className="mt-3 text-xs font-bold uppercase tracking-widest text-accent opacity-0 transition-opacity group-hover:opacity-100">
-                    Avaa &rarr;
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-accent opacity-70 transition-opacity group-hover:opacity-100">
+                    Avaa
+                    <ArrowRight className="h-3 w-3" />
                   </span>
                 </a>
               </ScrollReveal>
@@ -658,8 +659,9 @@ export default function HomeContent() {
                   <p className="mt-1 text-center text-sm font-medium opacity-70" style={{ color: v.color }}>
                     {v.stats}
                   </p>
-                  <span className="mt-3 text-xs font-bold uppercase tracking-widest opacity-60 transition-opacity group-hover:opacity-100" style={{ color: v.color }}>
-                    Vertaile &rarr;
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest opacity-60 transition-opacity group-hover:opacity-100" style={{ color: v.color }}>
+                    Vertaile
+                    <ArrowRight className="h-3 w-3" />
                   </span>
                 </a>
               </ScrollReveal>
@@ -773,7 +775,7 @@ export default function HomeContent() {
           <ScrollReveal direction="up">
             <AnimatedHeading
               as="h2"
-              text="Aloita vertailu nyt"
+              text="Valitse palvelu ja aloita"
               className="text-3xl font-extrabold text-white sm:text-4xl"
             />
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70 leading-relaxed">

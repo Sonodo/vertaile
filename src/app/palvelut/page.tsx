@@ -11,7 +11,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs';
 export const metadata: Metadata = {
   title: `Kaikki palvelut — ${SITE_NAME}`,
   description:
-    'Tutustu Valitseen kaikkiin vertailupalveluihin. Vertaa sähköä, lainoja, vakuutuksia, asuntoja, kotipalveluita, tarjouksia, lakipalveluita ja talouden seurantaa.',
+    'Tutustu Valitseen kaikkiin vertailupalveluihin. Vertaa sähköä, lainoja, vakuutuksia, asuntoja, kotipalveluita, tarjouksia ja talouden seurantaa.',
   alternates: { canonical: `${SITE_URL}/palvelut` },
 };
 
@@ -37,9 +37,10 @@ export default function PalvelutPage() {
             Kaikki palvelumme
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
-            Valitse tarjoaa yli 8 vertailupalvelua, jotka kattavat suomalaisen arjen
-            tärkeimmät osa-alueet. Sama menetelmä koskee jokaista tuotetta — järjestys
-            perustuu hintaan ja ominaisuuksiin.
+            Valitse tarjoaa kahdeksan erikoistunutta vertailupalvelua, jotka
+            kattavat suomalaisen arjen tärkeimmät osa-alueet. Yhtenäinen
+            järjestelyperuste kaikille — järjestys perustuu hintaan ja
+            ominaisuuksiin.
           </p>
         </section>
 

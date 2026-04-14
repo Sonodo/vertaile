@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowRight, Lightbulb, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Lightbulb, CheckCircle2, HelpCircle } from 'lucide-react';
 import { SITE_URL } from '@/lib/constants';
 import { lifeEvents, getLifeEventBySlug } from '@/data/life-events';
 import { getSpokeById } from '@/data/spokes';
@@ -66,6 +66,22 @@ export default async function LifeEventPage({
     })),
   };
 
+  const faqSchema =
+    event.faqs && event.faqs.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: event.faqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -76,6 +92,12 @@ export default async function LifeEventPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Breadcrumbs */}
       <nav className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Murupolku">
@@ -228,6 +250,155 @@ export default async function LifeEventPage({
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Deep content — long-form educational blocks */}
+      {event.content && event.content.length > 0 && (
+        <section className="bg-white">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div className="mx-auto max-w-3xl space-y-12">
+              {event.content.map((block, i) => {
+                if (block.type === 'section') {
+                  return (
+                    <div key={i}>
+                      <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                        {block.heading}
+                      </h2>
+                      <div className="mt-5 space-y-4">
+                        {block.paragraphs.map((para, j) => (
+                          <p key={j} className="text-base leading-relaxed text-slate-700">
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (block.type === 'section-with-list') {
+                  return (
+                    <div key={i}>
+                      <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                        {block.heading}
+                      </h2>
+                      <div className="mt-5 space-y-4">
+                        {block.paragraphs.map((para, j) => (
+                          <p key={j} className="text-base leading-relaxed text-slate-700">
+                            {para}
+                          </p>
+                        ))}
+                      </div>
+                      {block.listHeading && (
+                        <h3 className="mt-6 text-lg font-semibold text-slate-900">
+                          {block.listHeading}
+                        </h3>
+                      )}
+                      <ul className="mt-4 space-y-3">
+                        {block.listItems.map((item, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <CheckCircle2
+                              className="mt-0.5 h-5 w-5 shrink-0"
+                              style={{ color: event.color }}
+                            />
+                            <span className="text-slate-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                }
+
+                if (block.type === 'table') {
+                  return (
+                    <div key={i}>
+                      <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                        {block.heading}
+                      </h2>
+                      {block.intro && (
+                        <p className="mt-4 text-base leading-relaxed text-slate-700">
+                          {block.intro}
+                        </p>
+                      )}
+                      <div className="mt-6 overflow-x-auto rounded-xl border border-slate-200">
+                        <table className="min-w-full divide-y divide-slate-200 text-left text-sm">
+                          <thead className="bg-slate-50">
+                            <tr>
+                              {block.columns.map((col, j) => (
+                                <th
+                                  key={j}
+                                  scope="col"
+                                  className="px-4 py-3 font-semibold text-slate-900"
+                                >
+                                  {col}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100 bg-white">
+                            {block.rows.map((row, j) => (
+                              <tr key={j} className="hover:bg-slate-50/60">
+                                {row.map((cell, k) => (
+                                  <td key={k} className="px-4 py-3 text-slate-700">
+                                    {cell}
+                                  </td>
+                                ))}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                      {block.footnote && (
+                        <p className="mt-3 text-xs text-slate-500">{block.footnote}</p>
+                      )}
+                    </div>
+                  );
+                }
+
+                return null;
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {event.faqs && event.faqs.length > 0 && (
+        <section className="bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <div className="mb-8 flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0891B2]/10">
+                  <HelpCircle className="h-5 w-5 text-[#0891B2]" />
+                </div>
+                <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+                  Usein kysyttyä
+                </h2>
+              </div>
+
+              <div className="space-y-3">
+                {event.faqs.map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-colors open:border-slate-300"
+                  >
+                    <summary className="flex cursor-pointer items-start justify-between gap-4 text-left font-semibold text-slate-900 marker:hidden [&::-webkit-details-marker]:hidden">
+                      <span>{faq.question}</span>
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 text-xl leading-none text-slate-400 transition-transform group-open:rotate-45"
+                      >
+                        +
+                      </span>
+                    </summary>
+                    <p className="mt-4 text-base leading-relaxed text-slate-700">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
             </div>
           </div>
         </section>

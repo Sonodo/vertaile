@@ -168,12 +168,12 @@ export function Header() {
           {/* Search + Auth + CTA */}
           <div className="flex items-center gap-2">
             <NavSearch />
-            <UserMenu />
+            {process.env.NEXT_PUBLIC_AUTH_ENABLED === '1' && <UserMenu />}
             <Link
               href="/palvelut"
               className="hidden lg:inline-flex items-center bg-accent text-white rounded-lg px-4 py-2 text-sm font-semibold hover:bg-accent-600 transition-colors min-h-[44px]"
             >
-              Aloita vertailu
+              Katso kaikki palvelut
             </Link>
           </div>
 
@@ -250,7 +250,7 @@ export function Header() {
                   className="flex items-center justify-center w-full bg-accent text-white rounded-lg px-4 py-3 text-sm font-semibold hover:bg-accent-600 transition-colors min-h-[44px]"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Aloita vertailu
+                  Katso kaikki palvelut
                 </Link>
               </div>
             </nav>

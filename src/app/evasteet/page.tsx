@@ -44,7 +44,7 @@ export default function CookiePolicyPage() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-slate-900">Evästekäytäntö</h1>
-                <p className="text-sm text-slate-500">Päivitetty 28.3.2026</p>
+                <p className="text-sm text-slate-500">Päivitetty 21.3.2026</p>
               </div>
             </div>
 

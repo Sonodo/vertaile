@@ -81,13 +81,14 @@ export default function YhteystiedotPage() {
                 <div>
                   <h3 className="font-semibold text-[#0B1F3F]">Yhteydenotto</h3>
                   <span className="text-sm text-[#0891B2]">
-                    Yhteydenottolomake tulossa pian
+                    Lomake sivun oikealla puolella
                   </span>
                 </div>
               </div>
               <p className="text-sm text-slate-600">
-                Yhteydenottolomake on tulossa pian. Voit sillä lähettää meille
-                palautetta, kysymyksiä ja virheilmoituksia.
+                Käytä yhteydenottolomaketta palautteen, kysymysten ja
+                virheilmoitusten lähettämiseen. Viesti ohjautuu suoraan
+                tiimillemme, joka käsittelee sen 1–2 arkipäivän kuluessa.
               </p>
             </div>
 

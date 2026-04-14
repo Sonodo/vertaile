@@ -57,14 +57,25 @@ export function Footer() {
             <ul className="space-y-2.5">
               {spokes.map((spoke) => (
                 <li key={spoke.id}>
-                  <Link
-                    href={`/palvelut/${spoke.slug}`}
-                    className="text-sm text-slate-400 hover:text-accent-400 transition-colors"
+                  <a
+                    href={spoke.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm text-slate-400 hover:text-accent-400 transition-colors"
                   >
                     {spoke.verticalFi}
-                  </Link>
+                    <ExternalLink className="w-3 h-3 opacity-60" aria-hidden="true" />
+                  </a>
                 </li>
               ))}
+              <li className="pt-1.5">
+                <Link
+                  href="/palvelut"
+                  className="text-sm font-medium text-accent-400 hover:text-white transition-colors"
+                >
+                  Kaikki palvelut &rarr;
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -154,7 +165,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Valitse. Kaikki oikeudet pidätetään.
+            &copy; 2024&ndash;{new Date().getFullYear()} Valitse. Kaikki oikeudet pidätetään.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/tietosuoja" className="text-sm text-slate-500 hover:text-slate-300 transition-colors">

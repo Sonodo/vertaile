@@ -44,7 +44,7 @@ export default function TermsOfServicePage() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-slate-900">Käyttöehdot</h1>
-                <p className="text-sm text-slate-500">Päivitetty 28.3.2026</p>
+                <p className="text-sm text-slate-500">Päivitetty 12.3.2026</p>
               </div>
             </div>
 
@@ -59,7 +59,7 @@ export default function TermsOfServicePage() {
                 Valitse on ilmainen vertailupalvelualusta, joka auttaa kuluttajia vertaamaan
                 erilaisia palveluita ja tuotteita Suomessa. Palvelu kokoaa yhteen useita
                 vertailualustoja, kuten sähkösopimukset, lainat, vakuutukset, asunnot,
-                kotipalvelut, tarjoukset, lakipalvelut ja henkilökohtaisen talouden hallinnan.
+                kotipalvelut, tarjoukset ja henkilökohtaisen talouden hallinnan.
               </p>
               <p>
                 Palvelun tavoitteena on tarjota puolueettomia vertailutietoja, joiden avulla

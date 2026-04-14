@@ -25,7 +25,7 @@ const values = [
     icon: Globe,
     title: 'Kattava',
     description:
-      'Yhdeksän eri vertailupalvelua kattaa suomalaisen arjen tärkeimmät osa-alueet: asumisen, energian, lainat, vakuutukset, puhelinliittymät, tarjoukset, kotipalvelut, lakiasiat ja talouden hallinnan.',
+      'Kahdeksan erikoistunutta vertailupalvelua kattaa suomalaisen arjen tärkeimmät osa-alueet: asumisen, energian, lainat, vakuutukset, puhelinliittymät, tarjoukset, kotipalvelut ja talouden hallinnan.',
   },
   {
     icon: Users,
@@ -85,10 +85,9 @@ export default function TietoaPage() {
               <p className="mt-4 text-slate-600 leading-relaxed">
                 Tavoitteemme on olla Suomen luotetuin vertailupalvelu — paikka, jonne
                 suomalaiset tulevat ensin kun haluavat vertailla sähköä, lainoja,
-                vakuutuksia, asuntoja tai mitä tahansa arjen palveluita. Lue tarkemmin
-                vertailumenetelmästämme sivulta{' '}
+                vakuutuksia, asuntoja tai mitä tahansa arjen palveluita. Lue tarkemmin{' '}
                 <Link href="/menetelma" className="font-medium text-[#0891B2] no-underline hover:underline">
-                  /menetelma
+                  vertailumenetelmästämme
                 </Link>
                 .
               </p>

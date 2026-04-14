@@ -6,7 +6,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
+        disallow: [
+          '/api/',
+          // Query reflector — no unique content, wastes crawl budget
+          '/haku?*',
+        ],
       },
     ],
     sitemap: 'https://valitse.fi/sitemap.xml',

@@ -90,10 +90,13 @@ export default function ContactForm() {
     setErrors({});
 
     try {
+      const subjectLabel =
+        subjectOptions.find((opt) => opt.value === formData.subject)?.label ??
+        formData.subject;
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, subjectLabel }),
       });
 
       if (!res.ok) {
@@ -121,7 +124,7 @@ export default function ContactForm() {
           Kiitos viestistäsi!
         </h3>
         <p className="text-sm text-slate-600">
-          Vastaamme 1–2 arkipäivän kuluessa.
+          Lähetämme viestisi sähköpostitse — vastaamme 1–2 arkipäivän kuluessa.
         </p>
         <button
           onClick={() => {

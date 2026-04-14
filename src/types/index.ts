@@ -29,6 +29,14 @@ export interface LifeEvent {
   relatedSpokeIds: string[];
   steps: LifeEventStep[];
   tips: string[];
+  /**
+   * Optional long-form content blocks rendered after the step-by-step journey.
+   * Use for high-intent pages (e.g. Google Ads destinations) where 1 500+ words
+   * of genuine depth materially improves Quality Score and conversion rate.
+   */
+  content?: LifeEventContentBlock[];
+  /** Optional FAQ Schema.org entries specific to this life event. */
+  faqs?: LifeEventFaq[];
 }
 
 export interface LifeEventStep {
@@ -37,6 +45,33 @@ export interface LifeEventStep {
   description: string;
   spokeId: string;
   actionText: string;
+}
+
+export type LifeEventContentBlock =
+  | {
+      type: 'section';
+      heading: string;
+      paragraphs: string[];
+    }
+  | {
+      type: 'section-with-list';
+      heading: string;
+      paragraphs: string[];
+      listHeading?: string;
+      listItems: string[];
+    }
+  | {
+      type: 'table';
+      heading: string;
+      intro?: string;
+      columns: string[];
+      rows: string[][];
+      footnote?: string;
+    };
+
+export interface LifeEventFaq {
+  question: string;
+  answer: string;
 }
 
 export interface BlogPost {

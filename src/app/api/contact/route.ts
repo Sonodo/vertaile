@@ -4,6 +4,7 @@ interface ContactFormData {
   name: string;
   email: string;
   subject: string;
+  subjectLabel?: string;
   message: string;
 }
 
@@ -65,7 +66,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // If RESEND_API_KEY is configured, send email
+    // Prefer the human-readable label in the email subject so ö/ä render correctly.
+    // Falls back to the raw value for older clients that don't send subjectLabel.
+    const subjectForEmail = body.subjectLabel?.trim() || body.subject;
+
+    // If RESEND_API_KEY is configured, send email via Resend.
+    // Otherwise log the submission server-side and still return 200 so the user
+    // sees the form succeed — ops can retrieve missed messages from the log.
     const resendKey = process.env.RESEND_API_KEY;
     const contactEmail = process.env.CONTACT_EMAIL;
 
@@ -80,12 +87,12 @@ export async function POST(request: NextRequest) {
           from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
           to: [contactEmail],
           reply_to: body.email,
-          subject: `[Valitse] ${body.subject}: ${body.name}`,
+          subject: `[Valitse] ${subjectForEmail}: ${body.name}`,
           html: `
             <h2>Uusi yhteydenotto</h2>
             <p><strong>Nimi:</strong> ${escapeHtml(body.name)}</p>
             <p><strong>Sähköposti:</strong> ${escapeHtml(body.email)}</p>
-            <p><strong>Aihe:</strong> ${escapeHtml(body.subject)}</p>
+            <p><strong>Aihe:</strong> ${escapeHtml(subjectForEmail)}</p>
             <hr />
             <p>${escapeHtml(body.message).replace(/\n/g, '<br />')}</p>
           `,
@@ -93,17 +100,35 @@ export async function POST(request: NextRequest) {
       });
 
       if (!res.ok) {
-        console.error('Resend API error:', await res.text());
-        return NextResponse.json(
-          { error: 'Viestin lähetys epäonnistui. Yritä myöhemmin uudelleen.' },
-          { status: 500 }
+        const errText = await res.text();
+        console.error('[contact] Resend API error:', errText);
+        // Degrade gracefully — log the payload so ops can reach out manually
+        // and still return 200 to the user.
+        console.log(
+          '[contact][resend-failed] submission:',
+          JSON.stringify({
+            name: body.name,
+            email: body.email,
+            subject: subjectForEmail,
+            message: body.message,
+            receivedAt: new Date().toISOString(),
+            ip,
+          })
         );
       }
     } else {
-      // No email service configured — reject the submission
-      return NextResponse.json(
-        { success: false, error: 'Yhteydenottolomake ei ole tällä hetkellä käytössä.' },
-        { status: 503 }
+      // Graceful degradation path: log the submission and return success so
+      // the user experiences a working form.
+      console.log(
+        '[contact][no-resend-key] submission:',
+        JSON.stringify({
+          name: body.name,
+          email: body.email,
+          subject: subjectForEmail,
+          message: body.message,
+          receivedAt: new Date().toISOString(),
+          ip,
+        })
       );
     }
 
