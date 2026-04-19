@@ -23,7 +23,7 @@ export function AnimatedHeading({ text, className = '', delay = 0, as: Tag = 'h1
       {words.map((word, i) => (
         <motion.span
           key={i}
-          className="inline-block mr-[0.3em]"
+          className="inline-block"
           variants={{
             hidden: { opacity: 0, x: 30 },
             visible: {
@@ -38,6 +38,7 @@ export function AnimatedHeading({ text, className = '', delay = 0, as: Tag = 'h1
           }}
         >
           {word}
+          {i < words.length - 1 ? ' ' : ''}
         </motion.span>
       ))}
     </MotionTag>

@@ -26,6 +26,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { AnimatedHeading, ScrollReveal, WaveDivider, StatsCounter } from '@/components/landing';
+import { trackOutboundSpokeClick } from '@/lib/analytics';
 
 /* ═══════════════════════════════════════════════════════════════════
    Valitse — Premium Hub Landing Page
@@ -33,6 +34,21 @@ import { AnimatedHeading, ScrollReveal, WaveDivider, StatsCounter } from '@/comp
    ═══════════════════════════════════════════════════════════════════ */
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
+
+/* ── Spoke link helpers ───────────────────────────────────────────
+   Append hub→spoke UTM params so spoke GA4 can attribute traffic back
+   to valitse.fi, and fire an outbound_spoke_click event on GA4. */
+
+const SPOKE_UTM = 'utm_source=valitse_hub&utm_medium=spoke_referral&utm_campaign=cross_sell';
+
+function withSpokeUtm(url: string): string {
+  const separator = url.includes('?') ? '&' : '?';
+  return `${url}${separator}${SPOKE_UTM}`;
+}
+
+function handleSpokeClick(spokeId: string, href: string): void {
+  trackOutboundSpokeClick(spokeId, href);
+}
 
 /* ── Static Data ──────────────────────────────────────────────── */
 
@@ -360,7 +376,8 @@ export default function HomeContent() {
             {verticals.map((v, i) => (
               <ScrollReveal key={v.id} delay={i * 0.12} direction="up">
                 <a
-                  href={v.url}
+                  href={withSpokeUtm(v.url)}
+                  onClick={() => handleSpokeClick(v.id, v.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative flex flex-col overflow-hidden rounded-2xl bg-white p-8 ring-1 ring-slate-200/60 shadow-sm transition-all duration-300 hover:shadow-lg hover:ring-accent/30 hover:-translate-y-1"
@@ -646,7 +663,8 @@ export default function HomeContent() {
             {verticals.map((v, i) => (
               <ScrollReveal key={v.id} delay={i * 0.12} direction="up">
                 <a
-                  href={v.url}
+                  href={withSpokeUtm(v.url)}
+                  onClick={() => handleSpokeClick(v.id, v.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex min-h-[200px] flex-col items-center justify-center rounded-xl px-6 py-8 transition-transform duration-300 hover:scale-[1.03]"
