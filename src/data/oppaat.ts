@@ -192,7 +192,7 @@ export const oppaat: OppaatGuide[] = [
 <li><strong>Henkivakuutukset ja edunsaajamääräykset</strong>: päivitä edunsaaja heti.</li>
 <li><strong>Yhteiset luotot ja luottokortit</strong>: irtisano tai jaa nimellä.</li>
 </ol>
-<p>Asiantuntijatiimit Lakimaattissa hoitavat avioehto- ja ositussopimukset, mutta sopimusten kilpailutuksen voit tehdä itse Valitse-verkostossa.</p>
+<p>Avioehto- ja ositussopimusten kanssa kannattaa kääntyä lakiasiantuntijan puoleen, mutta sopimusten kilpailutuksen voit tehdä itse Valitse-verkostossa.</p>
 
 <h2>Eläköityminen: vakuutusten päivitys ja talouden virtaviivaistaminen</h2>
 <p>Eläkkeelle jääminen muuttaa kustannusrakennetta. Tärkeimmät päivitykset:</p>

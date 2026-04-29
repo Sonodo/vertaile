@@ -588,7 +588,7 @@ export default function HomeContent() {
 
       {/* ─────────────────────────────────────────────────────────────
           SECTION 8: COMPARISON TABLE
-          White bg, Lakimaatti-style table with highlighted column
+          White bg, comparison table with highlighted column
          ───────────────────────────────────────────────────────────── */}
       <section className="bg-slate-50 py-20 sm:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">

@@ -1,9 +1,11 @@
 # Valitse.fi Launch Playbook
 ## Comprehensive Launch Strategy for a Finnish Comparison Hub (0-100EUR Budget)
 
-**Prepared**: 2026-04-06
+**Prepared**: 2026-04-06 (revised 2026-04-30)
 **Site**: valitse.fi -- Minimalist comparison hub connecting 5 Finnish verticals
 **Connected Sites**: Energiavertailu, Lainavertailu, Vakuutusvertailu, Puhelinvertailu + hub
+
+> ⚠️ **LAKIMAATTI ISOLATION RULE (2026-04-30)** — All "cross-link from/to Lakimaatti" tactics in this playbook are **CANCELLED** per Chairman directive. Do NOT add Lakimaatti to "Osa Valitse-perhettä" badging, do NOT pursue Lakimaatti backlinks, do NOT cross-sell from Lakimaatti. Use Asuntomaatti, Alennuskartta, Fillioneer, Fixmera, Kayeet for cross-promo instead. See `_EMPIRE_HQ/LAKIMAATTI_ISOLATION.md`.
 
 ---
 
